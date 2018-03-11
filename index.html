@@ -5,45 +5,124 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-	<head>
-		<title>Industrious by TEMPLATED</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<a class="logo" href="index.html">Industrious</a>
-				<nav>
-					<a href="#menu">Menu</a>
-				</nav>
-			</header>
+<head>
+	<title>Tools for Online Learning - Assignment 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".btn1").click(function () {
+				pauseVideo();
+				$("#quiz").fadeIn(1000);
+				$(".options").fadeIn(1000);
+				$(".btn3").fadeIn(1000);
 
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href="generic.html">Generic</a></li>
-				</ul>
-			</nav>
+			});
+			$(".btn2").click(function () {
+				$("#quiz").fadeOut(1000);
+				$(".options").fadeOut(1000);
+				$(".btn3").fadeOut(1000);
+				playVideo();
+			});
+		});
+	</script>
 
-		<!-- Banner -->
-			<section id="banner">
-				<div class="inner">
-					<h1>Industrious</h1>
-					<p>A responsive business oriented template with a video background<br />
-					designed by <a href="https://templated.co/">TEMPLATED</a> and released under the Creative Commons License.</p>
-				</div>
-				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
-			</section>
+	<style>
+		.options {
+			display: none;
+		}	
 
-		<!-- Highlights -->
-			<section class="wrapper">
+		input:checked {
+			-webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1),
+			-webkit-transform .25s cubic-bezier(0, 0, .2, 1);
+		}
+
+		input:active {
+			-webkit-transform: scale(1.5);
+			-webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);
+		}
+		/* The up/down direction logic */
+
+		input,
+		input:active {
+			background-position: 0 24px;
+		}
+
+		input:checked {
+			background-position: 0 0;
+		}
+
+		input:checked~input,
+		input:checked~input:active {
+			background-position: 0 -24px;
+		}
+	</style>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="index.html">How Lighter Works</a>
+		<!-- <nav>
+			<a href="#menu">Menu</a>
+		</nav> -->
+	</header>
+
+	<!-- Nav -->
+	<!-- <nav id="menu">
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="elements.html">Elements</a></li>
+			<li><a href="generic.html">Generic</a></li>
+		</ul>
+	</nav> -->
+
+	<!-- Banner -->
+	<section id="banner">
+		<div class="inner">
+			<h1>How Lighter Works</h1>
+			<p>A video with corrective hints<br />
+		</div>
+	</section>
+
+
+	<section class="wrapper">
+		<header class="special">
+			<h2>Video</h2>
+			<p>The following video is embedded with interactive quiz and corretive hints.</p>
+		</header>
+		<div class="inner">
+			<div style="margin: 0 auto;">
+				<div id="player"></div>
+			</div>
+			<img style="display:none;position:absolute;top:312px" id="quiz" src="images/quiz1.jpg" alt="">
+			<div class="options">
+				<input style="position:absolute;top:533px;" type="radio" name="name" checked />
+				<input style="position:absolute;top:603px" type="radio" name="name" />
+				<input style="position:absolute;top:669px" type="radio" name="name" />
+				<input style="position:absolute;top:736px" type="radio" name="name" />
+			</div>
+			<button style="display:none;position:absolute;top:900px;margin-left:580px;" class="btn3">SUBMIT</button>
+		</div>
+	</section>
+
+
+		<button class="btn1">Show Quiz</button>
+
+		<button class="btn2">Show Video</button>
+
+
+
+	<!-- <img id="image1" src="images/pic01.jpg" alt="image1"> -->
+
+	<!-- Highlights -->
+	<!-- <section class="wrapper">
 				<div class="inner">
 					<header class="special">
 						<h2>Sem turpis amet semper</h2>
@@ -106,17 +185,17 @@
 						</section>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
-		<!-- CTA -->
-			<section id="cta" class="wrapper">
+	<!-- CTA -->
+	<!-- <section id="cta" class="wrapper">
 				<div class="inner">
 					<h2>Curabitur ullamcorper ultricies</h2>
 					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
 				</div>
-			</section>
+			</section> -->
 
-		<!-- Testimonials -->
+	<!-- Testimonials
 			<section class="wrapper">
 				<div class="inner">
 					<header class="special">
@@ -165,10 +244,10 @@
 						</section>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
-		<!-- Footer -->
-			<footer id="footer">
+	<!-- Footer -->
+	<!-- <footer id="footer">
 				<div class="inner">
 					<div class="content">
 						<section>
@@ -198,14 +277,69 @@
 						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
 					</div>
 				</div>
-			</footer>
+			</footer> -->
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script>
+		// 2. This code loads the IFrame Player API code asynchronously.
+		var tag = document.createElement('script');
 
-	</body>
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		// 3. This function creates an <iframe> (and YouTube player)
+		//    after the API code downloads.
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				height: '720',
+				width: '1280	',
+				videoId: '7QeEL-dsgD8',
+				playerVars: { 'autoplay': 0, 'wmode': 'transparent', 'fs': 0, 'controls': 1, 'rel': 0, 'modestbranding': 1, 'showinfo': 0 },
+				events: {
+					'onStateChange': onPlayerStateChange,
+				}
+			});
+		}
+		document.getElementById('player').style['z-index'] = -10;
+		document.getElementById('player').style['-webkit-transform'] = 'translateZ(0)';
+		// document.getElementById('player').style['z-index'] = -10;
+		// document.getElementById('player').style['-webkit-transform'] = 'translateZ(0)';
+
+		// 4. The API will call this function when the video player is ready.
+		function onPlayerReady(event) {
+			event.target.playVideo();
+		}
+
+		// 5. The API calls this function when the player's state changes.
+		//    The function indicates that when playing a video (state=1),
+		//    the player should play for six seconds and then stop.
+		var done = false;
+		function onPlayerStateChange(event) {
+			if (event.data == YT.PlayerState.PLAYING && !done) {
+				// setTimeout(stopVideo, 6000);
+				done = true;
+			}
+		}
+		function stopVideo() {
+			player.stopVideo();
+		}
+		function pauseVideo() {
+			player.pauseVideo();
+		}
+		function playVideo() {
+			player.playVideo();
+		}
+	</script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+
+
+</body>
+
 </html>
